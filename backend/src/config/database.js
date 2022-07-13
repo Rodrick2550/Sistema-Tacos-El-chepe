@@ -23,6 +23,12 @@ class ConnectionDB {
       this.connection.query(`USE ${process.env.DB_NAME}`);
     }
   }
+
+  async createTables(tables) {
+    for(const table of tables){
+      await this.connection.query(table);
+    }
+  }
 }
 
 export default ConnectionDB;
