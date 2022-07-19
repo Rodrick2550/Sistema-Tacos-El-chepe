@@ -1,34 +1,20 @@
 import mysql2 from 'mysql2/promise';
+import tables from '../api/v1/models/index.js'
 
-class ConnectionDB {
-  constructor() {
-    if (ConnectionDB.instance) return ConnectionDB.instance;
+const connection = await mysql2.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+});
 
-    console.log('solo debe aparecer una vez');
-    ConnectionDB.instance = this;
+await connection.query(
+  `CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME};`
+);
 
-    this.connection = null;
-  }
+connection.query(`USE ${process.env.DB_NAME}`);
 
-  async createConnection() {
-    if (!this.connection) {
-      this.connection = await mysql2.createConnection({
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-      });
-      this.connection.query(
-        `CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME};`
-      );
-      this.connection.query(`USE ${process.env.DB_NAME}`);
-    }
-  }
-
-  async createTables(tables) {
-    for(const table of tables){
-      await this.connection.query(table);
-    }
-  }
+for(const table of tables){
+  await connection.query(table);
 }
 
-export default ConnectionDB;
+export default connection;
