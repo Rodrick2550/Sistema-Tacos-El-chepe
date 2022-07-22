@@ -1,62 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel Administrador</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-</head>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
 
-<body>
+  <style>
+    .cards-wrapper {
+      display: flex;
+    }
 
+    .card {
+      margin: 0.5rem;
+      width: calc(100% / 3);
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      background-color: #e1e1e1;
+      width: 6vh;
+      height: 6vh;
+      border-radius: 50%;
+      top: 50%;
+      transform: translate(-50%);
+    }
+  </style>
+
+  <body>
     <div class="container p-5">
-        <div class="container d-flex justify-content-between">
+      <div class="container d-flex justify-content-between align-items-center">
         <h2>Productos del menú</h2>
-        <button type="button" class="btn btn-primary" id="newProduct"> Nuevo </button>
+        <a
+          href="nuevoProducto.html"
+          type="button"
+          class="btn btn-primary"
+          >Nuevo</a
+        >
+      </div>
+      <hr />
 
-        </div>
-        <hr>
-        <div class="containter d-flex flex-wrap">
-            <div class="card m-4" style="width: 18rem;">
-                <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <a href="#" class="btn btn-primary">Editar</a>
-                  <a href="#" class="btn btn-secondary">Eliminar</a>
-                </div>
-              </div>
+      <h3>Tacos</h3>
 
-              <div class="card m-4" style="width: 18rem;">
-                <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <a href="#" class="btn btn-primary">Editar</a>
-                  <a href="#" class="btn btn-secondary">Eliminar</a>
-                </div>
-              </div>
+      <div id="carouselTacos" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carouselTacosInner"></div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselTacos"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselTacos"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
-              <div class="card m-4" style="width: 18rem;">
-                <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <a href="#" class="btn btn-primary">Editar</a>
-                  <a href="#" class="btn btn-secondary">Eliminar</a>
-                </div>
-              </div>
+      <h3>Quesadillas</h3>
 
-              <div class="card m-4" style="width: 18rem;">
-                <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <a href="#" class="btn btn-primary">Editar</a>
-                  <a href="#" class="btn btn-secondary">Eliminar</a>
-                </div>
-              </div>
+      <div
+        id="carouselQuesadillas"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner" id="carouselQuesadillasInner"></div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselQuesadillas"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselQuesadillas"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
-        </div>
+      <h3>Bebidas</h3>
+      <div id="carouselBebidas" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carouselBebidasInner"></div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselBebidas"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselBebidas"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/panelAdmin.js"></script>
-</body>
+  </body>
 </html>
