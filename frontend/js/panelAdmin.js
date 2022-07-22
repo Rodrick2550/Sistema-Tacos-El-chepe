@@ -104,7 +104,7 @@ const renderProducts = (products) => {
   }
 
   if (cardsWrapperTacos === '') {
-    carouselTacos.parentElement.parentElement.innerHTML = `<p>No hay productos</p>`;
+    carouselTacos.parentElement.innerHTML = `<p>No hay productos</p>`;
   }
   if (cardsWrapperQuesadillas === '') {
     carouselQuesadillas.parentElement.innerHTML = `<p>No hay productos</p>`;
@@ -125,6 +125,8 @@ const createCard = (product) => {
     />
     <div class="card-body">
       <h5 class="card-title">${product.name}</h5>
+      <p>${product.description}</p>
+      <p class="bold" ><strong>Precio: $${product.price}</strong></p>
       <a href="editarProducto.html?id=${product.id_product}" class="btn btn-primary">Editar</a>
       <a onclick="deleteProduct(${product.id_product})" class="btn btn-danger">Eliminar</a>
     </div>

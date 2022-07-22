@@ -10,71 +10,35 @@
   <body>
     <div class="container">
       <div class="row mt-5">
-        <div class="col border border-secondary">
+        <div class="col">
           <h2 class="text-center">En cola</h2>
           <div>
-            <table class="w-100" id="table">
-              <tr>
-                <th>Descripcion</th>
-                <th>Numero de orden</th>
-                <th>Estatus</th>
-              </tr>
-              <tr>
-                <td>
-                  <ul>
-                    <li>5 tacos de pastor</li>
-                    <li>2 tacos de asada</li>
-                    <li>1 quesadilla</li>
-                    <li>3 refrescos</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul>
-                    <li>85585</li>
-                  </ul>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-primary btn-sm">
-                    Empezar
-                  </button>
-                </td>
-              </tr>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Estatus</th>
+                </tr>
+              </thead>
+              <tbody id="bodyTodo">
+              </tbody>
             </table>
           </div>
         </div>
-        <div class="col border border-secondary">
+        <div class="col">
           <h2 class="text-center">En progreso</h2>
           <div>
-            <table class="w-100">
-              <tr>
-                <th>Descripcion</th>
-                <th>Numero de orden</th>
-                <th>Estatus</th>
-              </tr>
-
-              <tr>
-
-                <td>
-                  <ul>
-                    <li>2 tacos de pastor</li>
-                    <li>2 tacos de Ubre</li>
-                    <li>1 Hamburguesa</li>
-                    <li>3 refrescos</li>
-                  </ul>
-                </td>
-
-                <td>
-                  <ul>
-                    <li>95595</li>
-                  </ul>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-primary btn-sm">
-                    Finalizar
-                  </button>
-                </td>
-              </tr>
-
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Estatus</th>
+                </tr>
+              </thead>
+              <tbody id="bodyInProgress">
+              </tbody>
             </table>
           </div>
         </div>
