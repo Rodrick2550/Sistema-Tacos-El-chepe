@@ -33,7 +33,7 @@ formLogin.addEventListener('submit', async (e) => {
   }
 
   if (data.role === 'waiter') {
-    return (window.location.href = './mesaManagement.html');
+    return (window.location.href = './panelMesas.html');
   }
 
   if (data.role === 'chef') {
