@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Editar Producto</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-</head>
-<body>
-    <body>
-        <h2 class="text-center mb-4 mt-2"  >Editar Producto</h2>
-     <div class="container overflow-hidden">
-         <div class="row gx-5">
-           <div class="col">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
+  <body>
+    <h2 class="text-center mb-4 mt-2">Editar Producto</h2>
+    <div class="container overflow-hidden">
+      <form id="productForm">
+        <div class="row gx-5">
+          <div class="col">
             <div class="p-3 border bg-light">
-             <h2>Cambiar Informacion de Producto</h2>
-             <label for="" class="form-label">Nombre:</label>
-             <input type="text" name="" id="" class="form-control">
-             <label for="" class="form-label">Precio:</label>
-             <input type="text" name="" id="" class="form-control">
-             <label for="" class="form-label">Descripcion:</label>
-             <input type="text" name="" id="" class="form-control mb-4">
-             <button type="submit" class="btn btn-primary align-center">Modificar</button>
+              <h2>Cambiar Informacion de Producto</h2>
+              <label for="name" class="form-label">Nombre:</label>
+              <input type="text" id="name" class="form-control mb-2" required />
+              <label for="price" class="form-label">Precio:</label>
+              <input
+                type="number"
+                id="price"
+                class="form-control mb-2"
+                required
+              />
+              <label for="description" class="form-label">Descripcion:</label>
+              <input
+                type="text"
+                id="description"
+                class="form-control mb-2"
+                required
+              />
+              <label for="category" class="form-label">Categoria:</label>
+              <select id="category" class="form-select mb-4" required>
+                <option value="">Por favor selecciona una categoria</option>
+                <option value="tacos">Tacos</option>
+                <option value="quesadillas">Quesadillas</option>
+                <option value="bebidas">Bebidas</option>
+              </select>
+              <button type="submit" class="btn btn-primary align-center">
+                Modificar
+              </button>
             </div>
-           </div>
-           <div class="col">
-             <div class="p-3 border bg-light">
-                 <h3>Imagen del producto</h3>
-             <label for="" class="form-label">Subir Archivos</label>
-             <input type="file" name="" id="" class="form-control">
-             </div>
-           </div>
-         </div>
-       </div>
-</body>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-light">
+              <h3>Imagen del producto</h3>
+              <label for="image" class="form-label">Subir Imagen</label>
+              <input type="file" accept="accept="image/png, image/gif,
+              image/jpeg" id="image" class="form-control" name="image"
+              required/>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="../js/editarProducto.js"></script>
+  </body>
 </html>

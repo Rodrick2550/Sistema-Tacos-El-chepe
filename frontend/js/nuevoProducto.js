@@ -19,7 +19,6 @@ const checkIfLogged = async (email, password) => {
 };
 
 newPorductForm.addEventListener('submit', async (e) => {
-  // send name, description, price, category and image to backend
   e.preventDefault();
   const name = e.target.name.value;
   const description = e.target.description.value;
@@ -34,8 +33,6 @@ newPorductForm.addEventListener('submit', async (e) => {
   formData.append('price', price);
   formData.append('category', category);
   formData.append('image', image);
-
-  console.log(formData.get('image'));
 
   const response = await fetch('http://127.0.0.1:3000/api/v1/products', {
     method: 'POST',
