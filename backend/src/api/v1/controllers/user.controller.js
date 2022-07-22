@@ -2,21 +2,16 @@ import connection from "../../../config/database.js";
 
 const createUserHandler = async (req, res) => {
 
-	// create user with myql2 promise
-	const { firstName, lastName, email, password } = req.body;
+	const { firstName, lastName, email, password, role } = req.body;
 
 	try {
 		const user = await connection.query(
-			`INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)`,
-			[firstName, lastName, email, password]
+			`INSERT INTO users (firstName, lastName, email, password, role) VALUES (?, ?, ?, ?, ?)`,
+			[firstName, lastName, email, password, role]
 		);
-		return res.status(201).json({
-			message: 'Usuario creado correctamente'
-		});
+		return res.status(201).send();
 	} catch(e) {
-		return res.status(500).json({
-			message: 'Error al crear el usuario'
-		});
+		return res.status(500).send();
 	}
 }
 
