@@ -5,6 +5,6 @@ CREATE TABLE IF NOT EXISTS order_items (
   status ENUM('todo', 'in progress', 'done') NOT NULL DEFAULT 'todo',
   quantity INT NOT NULL,
   total INT NOT NULL,
-  CONSTRAINT fk_order_items_orders FOREIGN KEY (order_id_order) REFERENCES orders (id_order),
-  CONSTRAINT fk_order_items_products FOREIGN KEY (product_id_product) REFERENCES products (id_product)
+  CONSTRAINT fk_order_items_orders FOREIGN KEY (order_id_order) REFERENCES orders (id_order) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_order_items_products FOREIGN KEY (product_id_product) REFERENCES products (id_product) ON UPDATE CASCADE ON DELETE CASCADE
 );

@@ -80,6 +80,7 @@ const removeProductHandler = async (req, res) => {
     );
     return res.status(200).send();
   } catch (e) {
+    console.log(e)
     return res.status(500).send();
   }
 };

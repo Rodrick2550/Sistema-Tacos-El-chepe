@@ -11,18 +11,22 @@
     <div class="container p-5">
       <div class="container d-flex justify-content-between">
         <h2>Estados de mesas</h2>
-        <button
-          type="submit"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >
-          Nueva mesa
-        </button>
+        <div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Nueva mesa
+          </button>
+          <a href="login.html" type="button" class="btn btn-danger"
+            >Cerrar Sesión</a
+          >
+        </div>
       </div>
       <hr />
-      <div class="containter d-flex flex-wrap" id="ordersContainer">
-      </div>
+      <div class="containter d-flex flex-wrap" id="ordersContainer"></div>
     </div>
 
     <!-- Button trigger modal -->
@@ -50,8 +54,7 @@
                   <th scope="col">Ocupar mesa</th>
                 </tr>
               </thead>
-              <tbody id="tableTBody">
-              </tbody>
+              <tbody id="tableTBody"></tbody>
             </table>
           </div>
           <div class="modal-footer">
