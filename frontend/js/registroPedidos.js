@@ -46,6 +46,7 @@ const renderOrderItems = (orderItems) => {
 const init = async () => {
   registroBtn.setAttribute('href', `detalleOrden.html?id_order=${id}`);
   const orderItems = await getOrderItems();
+  console.log(orderItems)
   renderOrderItems(orderItems);
   totalText.innerHTML = `Total: ${total}`;
 };

@@ -47,14 +47,15 @@ const getOrderItemsHandler = async (req, res) => {
 
   try {
     // join order_items and products tables
+    let orderItems;
     if (id_order) {
 
-    const orderItems = await connection.query(
+    orderItems = await connection.query(
       `SELECT order_items.id_order_item, order_items.quantity, order_items.total, products.name AS product_name FROM order_items INNER JOIN products ON order_items.product_id_product = products.id_product WHERE order_items.order_id_order = ?`,
       [id_order]
     );
     } else {
-      const orderItems = await connection.query(
+      orderItems = await connection.query(
         `SELECT order_items.id_order_item, order_items.quantity, order_items.total, products.name AS product_name FROM order_items INNER JOIN products ON order_items.product_id_product = products.id_product`
       );
     }
@@ -62,6 +63,7 @@ const getOrderItemsHandler = async (req, res) => {
 
     return res.status(200).json(orderItems[0]);
   } catch (e) {
+    console.log(e)
     return res.status(500).send();
   }
 };
