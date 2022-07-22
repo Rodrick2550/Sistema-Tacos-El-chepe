@@ -1,6 +1,8 @@
 const id = new URLSearchParams(window.location.search).get('id_order');
 const rowsContainer = document.getElementById('rowsContainer');
 const registroBtn = document.getElementById('regresarBtn');
+const totalText = document.getElementById('totalText');
+let total = 0;
 
 if (!id) {
   window.location.href = 'panelMesas.html';
@@ -36,6 +38,7 @@ const createOrderItemRow = (orderItem) => {
 
 const renderOrderItems = (orderItems) => {
   orderItems.map((orderItem) => {
+    total += parseInt(orderItem.total);
     rowsContainer.appendChild(createOrderItemRow(orderItem));
   });
 };
@@ -44,6 +47,7 @@ const init = async () => {
   registroBtn.setAttribute('href', `detalleOrden.html?id_order=${id}`);
   const orderItems = await getOrderItems();
   renderOrderItems(orderItems);
+  totalText.innerHTML = `Total: ${total}`;
 };
 
 init();

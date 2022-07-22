@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Historial de Pedidos</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
+  <body>
     <div class="container p-5">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h2 class="m-2">Historial de pedidos</h2>
-            <a id="regresarBtn" class="btn btn-secondary">Regresar</a>
+      <div class="container d-flex justify-content-between align-items-center">
+        <h2 class="m-2">Historial de pedidos</h2>
+        <div class="d-flex ">
+          <p id="totalText" class="me-2">Total:</p>
+          <a id="regresarBtn" class="btn btn-secondary ms-3">Regresar</a>
         </div>
+      </div>
 
-        <hr>
-        <div class="text-center">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Descripción</th>
-                        <th>Cantidad</th>
-                    </tr>
-                </thead>
-                <tbody id="rowsContainer">
-                </tbody>
-            </table>
-        </div>
+      <hr />
+      <div class="text-center">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Descripción</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+          <tbody id="rowsContainer"></tbody>
+        </table>
+      </div>
     </div>
     <script src="../js/registroPedidos.js"></script>
-</body>
+  </body>
 </html>
