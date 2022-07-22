@@ -1,10 +1,9 @@
-import connection from "../../../config/database.js";
+import connection from '../../../config/database.js';
 
 const createOrderItemHandler = async (req, res) => {
   const { id_order, id_product, quantity } = req.body;
 
   try {
-
     // check if order item exists with the same product and the same order
     const orderItem = await connection.query(
       `SELECT * FROM order_items WHERE order_id_order = ? AND product_id_product = ?`,
@@ -30,8 +29,6 @@ const createOrderItemHandler = async (req, res) => {
       return res.status(200).send();
     }
 
-
-
     // create new order item
     await connection.query(
       `INSERT INTO order_items (order_id_order, product_id_product, quantity, total) VALUES (?, ?, ?, ?)`,
@@ -39,11 +36,28 @@ const createOrderItemHandler = async (req, res) => {
     );
 
     return res.status(200).send();
-  }
-  catch (e) {
+  } catch (e) {
     console.log(e);
     return res.status(500).send();
   }
-}
+};
 
-export { createOrderItemHandler };
+const getOrderItemsHandler = async (req, res) => {
+  const { id_order } = req.query;
+
+  try {
+    // join order_items and products tables
+
+    const orderItems = await connection.query(
+      `SELECT order_items.id_order_item, order_items.quantity, order_items.total, products.name AS product_name FROM order_items INNER JOIN products ON order_items.product_id_product = products.id_product WHERE order_items.order_id_order = ?`,
+      [id_order]
+    );
+
+
+    return res.status(200).json(orderItems[0]);
+  } catch (e) {
+    return res.status(500).send();
+  }
+};
+
+export { createOrderItemHandler, getOrderItemsHandler };
