@@ -2,3 +2,6 @@
 backend/node_modules
 backend/.env
 .DS_STORE
+
+backend/src/static/images
+backend/yarn.lock
