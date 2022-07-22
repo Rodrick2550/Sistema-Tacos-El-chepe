@@ -18,20 +18,24 @@
         <div class="container flex-wrap text-center mt-5 mx-auto w-25">
           <h3>Número de tarjeta:</h3>
           <input
-            type="text"
+            type="number"
             class="form-control"
             id="validationDefault05"
             required
             placeholder="Introduzca los 16 dígitos"
+            min="0"
           />
 
           <h3 class="mt-5">PIN:</h3>
           <input
-            type="text"
+            type="number"
             class="form-control"
             id="validationDefault05"
             required
             placeholder="Permita al usuario ingresar su PIN"
+            min="0"
+            minlength="4"
+            maxlength="4"
           />
           <br />
           <div class="btn mt-4">

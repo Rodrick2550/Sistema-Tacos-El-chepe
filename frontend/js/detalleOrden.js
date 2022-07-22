@@ -166,6 +166,7 @@ const createCard = (product) => {
   inputQuantity.className = 'form-control';
   inputQuantity.id = `quantity-${product.id_product}`;
   inputQuantity.min = '1';
+  inputQuantity.required = true;
 
   const buttonAdd = document.createElement('button');
   buttonAdd.className = 'btn btn-primary mt-2';
