@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Método de pago - Efectivo</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
+  <body>
     <div class="container d-flex flex-column p5 text-center">
-        <div class="text-center">
-            <br>
-            <h2>Pago con tarjeta</h2>
-        </div>
-        <hr>
+      <div class="text-center">
+        <br />
+        <h2>Pago con tarjeta</h2>
+      </div>
+      <hr />
+      <form id="tarjetaForm">
         <div class="container flex-wrap text-center mt-5 mx-auto w-25">
-            <h3>Número de tarjeta:</h3>
-            <input type="text" class="form-control" id="validationDefault05" required placeholder="Introduzca los 16 dígitos">
+          <h3>Número de tarjeta:</h3>
+          <input
+            type="text"
+            class="form-control"
+            id="validationDefault05"
+            required
+            placeholder="Introduzca los 16 dígitos"
+          />
 
-            <h3 class="mt-5">PIN:</h3>
-            <input type="text" class="form-control " id="validationDefault05" required placeholder="Permita al usuario ingresar su PIN">
-            <br>
-            <div class="btn mt-4">
-               <a href="#" class="btn btn-primary ">Realizar pago</a>
-                <a href="#" class="btn btn-secondary">Cancelar</a> 
-            </div>
-            
+          <h3 class="mt-5">PIN:</h3>
+          <input
+            type="text"
+            class="form-control"
+            id="validationDefault05"
+            required
+            placeholder="Permita al usuario ingresar su PIN"
+          />
+          <br />
+          <div class="btn mt-4">
+            <button type="submit" class="btn btn-primary">Realizar pago</button>
+            <a id="cancelarBtn" class="btn btn-secondary">Cancelar</a>
+          </div>
         </div>
-        
+      </form>
     </div>
-</body>
+    <script src="../js/pagoTarjeta.js"></script>
+  </body>
 </html>
