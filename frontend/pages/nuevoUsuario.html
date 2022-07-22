@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo Usuario</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
+  <body>
+    <h2 class="text-center my-5">Nuevo Usuario</h2>
+    <div class="container w-50 mt-3 border p-4 rounded" style="background-color: #f2f2f2">
+      <form id="userForm">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">Nombre:</label>
+          <input type="text" class="form-control" id="firstName" />
+        </div>
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Apellido:</label>
+          <input type="text" class="form-control" id="lastName" />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control" id="email" />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña:</label>
+          <input type="password" class="form-control" id="password" />
+        </div>
+        <div class="mb-4">
+          <label for="role" class="form-label">Rol del usuario:</label>
+          <select id="role" class="form-select">
+            <option value="">Seleccione su rol</option>
+            <option value="waiter">Mesero</option>
+            <option value="admin">Administrador</option>
+            <option value="chef">Cocina</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Usuario</button>
+      </form>
+    </div>
+
+    <script src="../js/nuevoUsuario.js"></script>
+  </body>
+</html>
