@@ -4,6 +4,7 @@ import express, { application } from 'express';
 import userRoutes from '../api/v1/routes/user.route.js';
 import productRoutes from '../api/v1/routes/product.route.js';
 import orderRoutes from '../api/v1/routes/order.route.js';
+import tableRoutes from '../api/v1/routes/table.route.js';
 import orderItemRoutes from '../api/v1/routes/orderItem.route.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -23,6 +24,7 @@ app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/products', productRoutes);
 app.use('/api/v1/orders', orderRoutes);
 app.use('/api/v1/order-items', orderItemRoutes);
+app.use('/api/v1/tables', tableRoutes);
 app.use('/images', express.static(path.join(__dirname, '../static/images')));
 
 export default app;
