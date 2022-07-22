@@ -3,12 +3,12 @@ import { createProductHandler, getProductsHandler, getProductByIdHandler, remove
 import storage from '../utils/multer.js';
 import multer from 'multer';
 
-const uploader = multer({ storage });
+const upload = multer({ storage });
 
 const router = Router();
 
 router
-  .post('/', uploader.single('image'), createProductHandler)
+  .post('/', upload.single('image'), createProductHandler)
   .delete('/:id', removeProductHandler)
   .get('/', getProductsHandler)
   .get('/:id', getProductByIdHandler);
