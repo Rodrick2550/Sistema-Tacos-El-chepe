@@ -24,7 +24,6 @@ const getOrdersHandler = async (req, res) => {
   const { id_mesero } = req.query;
 
   try {
-
     const orders = await connection.query(
       `SELECT tables.name, orders.id_order FROM tables INNER JOIN orders ON tables.id_table = orders.table_id_table WHERE orders.mesero_id_user = ? AND orders.status = 'pending'`,
       [id_mesero]
@@ -58,4 +57,22 @@ const payOrderHandler = async (req, res) => {
   }
 };
 
-export { createOrderHandler, getOrdersHandler, payOrderHandler };
+const getALlOrdersPendingHandler = async (req, res) => {
+  try {
+    const orders = await connection.query(
+      `SELECT * FROM orders WHERE status = 'pending'`
+    );
+
+    return res.status(200).json(orders[0]);
+  } catch (e) {
+    console.log(e);
+    return res.status(500).send();
+  }
+};
+
+export {
+  createOrderHandler,
+  getOrdersHandler,
+  payOrderHandler,
+  getALlOrdersPendingHandler,
+};
