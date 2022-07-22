@@ -2,22 +2,20 @@ import connection from '../../../config/database.js';
 import BinarySearchTree from '../utils/BinarySearchTree.js';
 
 const createProductHandler = async (req, res) => {
-	const { name, description, price } = req.body;
+	const { name, description, price, category } = req.body;
 
 	const urlImage = `http://${req.get('host')}/images/${req.file.filename}`;
 
 	try {
 		const product = await connection.query(
-			`INSERT INTO products (name, description, price, image) VALUES (?, ?, ?, ?)`,
-			[name, description, price, urlImage]
+			`INSERT INTO products (name, description, price, category, image) VALUES (?, ?, ?, ?, ?)`,
+			[name, description, price, category, urlImage]
 		);
-		return res.status(200).json({
-			message: 'Producto creado correctamente'
-		});
+
+		return res.status(200).send();
 	} catch(e) {
-		return res.status(500).json({
-			message: 'Error al crear el producto'
-		});
+		console.log(e);
+		return res.status(500).send();
 	}
 }
 
@@ -26,14 +24,11 @@ const getProductsHandler = async (req, res) => {
 		const products = await connection.query(
 			`SELECT * FROM products`
 		);
-		return res.status(200).json({
-			message: 'Productos obtenidos correctamente',
-			products: products[0]
-		});
+		return res.status(200).send(
+			products[0]
+		);
 	} catch(e) {
-		return res.status(500).json({
-			message: 'Error al obtener los productos'
-		});
+		return res.status(500).send();
 	}
 }
 
@@ -47,19 +42,14 @@ const getProductByIdHandler = async (req, res) => {
 		);
 
 		if (product[0].length === 0) {
-			return res.status(404).send({ message: 'Producto no encontrado' });
+			return res.status(404).send();
 		}
 
-		return res.status(200).json({
-			message: 'Producto obtenido correctamente',
-			product: product[0][0]
-		});
+		return res.status(200).send(product[0][0]);
 
 
 	} catch(e) {
-		return res.status(500).json({
-			message: 'Error al obtener el producto'
-		});
+		return res.status(500).send();
 	}
 }
 
@@ -72,13 +62,9 @@ const updateProductHandler = async (req, res) => {
 			`UPDATE products SET name = ?, description = ?, price = ? WHERE id = ?`,
 			[name, description, price, id]
 		);
-		return res.status(200).json({
-			message: 'Producto actualizado correctamente'
-		});
+		return res.status(200).send();
 	} catch(e) {
-		return res.status(500).json({
-			message: 'Error al actualizar el producto'
-		});
+		return res.status(500).send();
 	}
 }
 
@@ -87,16 +73,13 @@ const removeProductHandler = async (req, res) => {
 
 	try {
 		const product = await connection.query(
-			`DELETE FROM products WHERE id = ?`,
+			`DELETE FROM products WHERE id_product = ?`,
 			[id]
 		);
-		return res.status(200).json({
-			message: 'Producto eliminado correctamente'
-		});
+		return res.status(200).send()
 	} catch(e) {
-		return res.status(500).json({
-			message: 'Error al eliminar el producto'
-		});
+		console.log(e);
+		return res.status(500).send();
 	}
 }
 
