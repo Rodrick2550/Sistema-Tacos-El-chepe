@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getAvailableTables } from '../controllers/tables.controller.js';
+import { getAvailableTables } from '../controllers/table.controller.js';
 
 const router = Router();
 
