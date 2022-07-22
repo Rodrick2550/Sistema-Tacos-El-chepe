@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="container p-5">
-        <div class="container d-flex justify-content-between">
+        <div class="container d-flex justify-content-between align-items-center">
             <h2 class="m-2">Historial de pedidos</h2>
-            <button type="submit" class="btn btn-secondary">Regresar</button>
+            <a id="regresarBtn" class="btn btn-secondary">Regresar</a>
         </div>
-        
+
         <hr>
         <div class="text-center">
             <table class="table">
@@ -23,22 +23,11 @@
                         <th>Cantidad</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th>Taco de Pastor</th>
-                        <th>8</th>
-                    </tr>
-                    <tr>
-                        <th>Coca-Cola</th>
-                        <th>3</th>
-                    </tr>
-                    <tr>
-                        <th>Quesadilla de Asada</th>
-                        <th>2</th>
-                    </tr>
+                <tbody id="rowsContainer">
                 </tbody>
             </table>
         </div>
     </div>
+    <script src="../js/registroPedidos.js"></script>
 </body>
 </html>
