@@ -3,6 +3,24 @@ const odersContainer = document.getElementById('ordersContainer');
 const user = JSON.parse(localStorage.getItem('user'));
 const userId = user.id_usuario;
 
+const checkIfLogged = async (email, password) => {
+  const response = await fetch(
+    'http://127.0.0.1:3000/api/v1/users/authentication',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    }
+  );
+
+  if (response.status === 200) {
+    return true;
+  }
+  return false;
+};
+
 const getAvailableTables = async () => {
   const response = await fetch('http://localhost:3000/api/v1/tables');
   const data = await response.json();
@@ -114,6 +132,18 @@ const renderAssignedOrders = async () => {
 };
 
 const init = async () => {
+  if (!user) {
+    window.location.href = 'login.html';
+    return;
+  }
+
+  const userLogged = await checkIfLogged(user.email, user.password);
+
+  if (!userLogged) {
+    window.location.href = 'login.html';
+    return;
+  }
+
   renderAvailableTables();
   renderAssignedOrders();
 };
