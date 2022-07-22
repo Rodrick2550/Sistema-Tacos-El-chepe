@@ -114,7 +114,7 @@ const renderProducts = (products) => {
   }
 
   if (cardsWrapperTacos === '') {
-    carouselTacos.parentElement.parentElement.innerHTML = `<p>No hay productos</p>`;
+    carouselTacos.parentElement.innerHTML = `<p>No hay productos</p>`;
   }
   if (cardsWrapperQuesadillas === '') {
     carouselQuesadillas.parentElement.innerHTML = `<p>No hay productos</p>`;
