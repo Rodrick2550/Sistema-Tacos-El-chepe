@@ -1,175 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Orden</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/orde.css">
-    <link rel="stylesheet" href="../js/bootstrap.min.js">
-</head>
-<body>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <h2 class="text-center">Menú</h2>
-        <div class="carousel-inner">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
+  <style>
+    .cards-wrapper {
+      display: flex;
+    }
 
+    .card {
+      margin: 0.5rem;
+      width: calc(100% / 3);
+    }
 
-          <div class="carousel-item active">
-            <h2 class="text-center">Tacos</h2>
-            <input type="text" class="form-control w-50" placeholder="Producto" aria-label="Producto" aria-describedby="addon-wrapping ">
-            <div class="cards-wrapper d-flex">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Taco de Asada</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Taco de Pastor</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Taco de Tripa</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Taco de Chorizo</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>  
-            </div>
-          </div>
+    .carousel-control-prev,
+    .carousel-control-next {
+      background-color: #e1e1e1;
+      width: 6vh;
+      height: 6vh;
+      border-radius: 50%;
+      top: 50%;
+      transform: translate(-50%);
+    }
+  </style>
 
-
-          <div class="carousel-item">
-            <h2 class="text-center">Quesadillas</h2>
-            <input type="text" class="form-control w-50" placeholder="Producto" aria-label="Producto" aria-describedby="addon-wrapping ">
-            <div class="cards-wrapper d-flex">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Quesadilla de Asada</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Quesadilla de Pastor</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Quesadilla de Ubre</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Quesadilla de Chorizo</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-            </div>
-          </div>
-
-
-          <div class="carousel-item">
-            <h2 class="text-center">Bebidas</h2>
-            <input type="text" class="form-control w-50" placeholder="Producto" aria-label="Producto" aria-describedby="addon-wrapping ">
-            <div class="cards wrapper d-flex">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Agua de horchata</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Agua de Jamaica</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Coca Cola</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Agua Pura</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/homemade-korean-beef-bulgogi-tacos-picture-id1361820762?b=1&k=20&m=1361820762&s=170667a&w=0&h=xIAlxzZpDZJ73oe-bSw2x77iJ_FhAdBQ7TXXQzM1ZrM=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Mirinda</h5>
-                      <label for="validationDefault05" class="form-label">Cantidad</label>
-                      <input type="text" class="form-control" id="validationDefault05" required>
-                      <button class="btn btn-primary" type="submit">Agregar</button>
-                    </div>
-                  </div>
-            </div>
-          </div>
+  <body>
+    <div class="container p-5">
+      <div class="container d-flex justify-content-between align-items-center">
+        <h2>Productos del menú</h2>
+        <div>
+          <a class="btn btn-primary text-center me-2" id="registroPedidosLink">
+            Registro de Pedidos
+          </a>
+          <a class="btn btn-primary" id="cuentaLink">Cuenta</a>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      </div>
+      <hr />
+
+      <h3>Tacos</h3>
+
+      <div id="carouselTacos" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carouselTacosInner"></div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselTacos"
+          data-bs-slide="prev"
+        >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselTacos"
+          data-bs-slide="next"
+        >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
 
-    <div class="text-center">
-       <button class="btn btn-primary text-center" type="submit">Registro de Pedidos</button>
-      <button class="btn btn-primary" type="submit">Cuenta</button>
-    </div>  
-      
-      <script src="../js/bootstrap.min.js"></script>
-</body>
+      <h3>Quesadillas</h3>
+
+      <div
+        id="carouselQuesadillas"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner" id="carouselQuesadillasInner"></div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselQuesadillas"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselQuesadillas"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <h3>Bebidas</h3>
+      <div id="carouselBebidas" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carouselBebidasInner"></div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselBebidas"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselBebidas"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/detalleOrden.js"></script>
+  </body>
 </html>
