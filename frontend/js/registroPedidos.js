@@ -15,7 +15,27 @@ const getOrderItems = async () => {
 
   if (response.status === 200) {
     const data = await response.json();
-    return data;
+
+    // create empty hash table
+    const orderItems = new Map();
+
+    data.map((orderItem) => {
+      const currentOrderItemHashTable =
+        orderItems[orderItem.id_product];
+
+      if (currentOrderItemHashTable) {
+        currentOrderItemHashTable.quantity += orderItem.quantity;
+        currentOrderItemHashTable.total += orderItem.total;
+      } else {
+        orderItems[orderItem.id_product] = {
+          product_name: orderItem.product_name,
+          quantity: orderItem.quantity,
+          total: orderItem.total,
+        };
+      }
+    });
+
+    return orderItems;
   }
 
   return;
@@ -37,16 +57,17 @@ const createOrderItemRow = (orderItem) => {
 };
 
 const renderOrderItems = (orderItems) => {
-  orderItems.map((orderItem) => {
-    total += parseInt(orderItem.total);
-    rowsContainer.appendChild(createOrderItemRow(orderItem));
-  });
+  for (const [_, value] of Object.entries(orderItems)) {
+    const row = createOrderItemRow(value);
+    total += value.total;
+    rowsContainer.appendChild(row);
+  }
 };
 
 const init = async () => {
   registroBtn.setAttribute('href', `detalleOrden.html?id_order=${id}`);
   const orderItems = await getOrderItems();
-  console.log(orderItems)
+  console.log(orderItems);
   renderOrderItems(orderItems);
   totalText.innerHTML = `Total: ${total}`;
 };
