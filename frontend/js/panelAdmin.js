@@ -125,7 +125,7 @@ const createCard = (product) => {
     />
     <div class="card-body">
       <h5 class="card-title">${product.name}</h5>
-      <a href="editarProducto.html?${product.id_product}" class="btn btn-primary">Editar</a>
+      <a href="editarProducto.html?id=${product.id_product}" class="btn btn-primary">Editar</a>
       <a onclick="deleteProduct(${product.id_product})" class="btn btn-danger">Eliminar</a>
     </div>
   </div>
