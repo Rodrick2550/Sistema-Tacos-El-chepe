@@ -134,6 +134,9 @@ const createCard = (product) => {
 
 const loadProducts = async () => {
   const products = await getProducts();
+  carouselTacos.innerHTML = '';
+  carouselQuesadillas.innerHTML = '';
+  carouselBebidas.innerHTML = '';
   renderProducts(products);
 };
 
